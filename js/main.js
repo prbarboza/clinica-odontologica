@@ -358,4 +358,53 @@ mailChimp();
             $("#search_input").focus();
         });
 
+        // Fecha o menu mobile ao clicar fora (SlickNav)
+document.addEventListener('click', function (e) {
+  const menu = document.querySelector('.slicknav_nav');
+  const button = document.querySelector('.slicknav_btn');
+
+  if (!menu || !button) return;
+
+  // clicou fora do menu e fora do botão
+  if (!menu.contains(e.target) && !button.contains(e.target)) {
+    if (menu.style.display === 'block') {
+      button.click(); // fecha corretamente pelo SlickNav
+    }
+  }
+});
+
+// Fecha ao clicar em um link do menu (UX melhor)
+document.addEventListener('click', function (e) {
+  if (e.target.closest('.slicknav_nav a')) {
+    document.querySelector('.slicknav_btn')?.click();
+  }
+});
+
+function initTestimonials() {
+    if (window.innerWidth < 992) {
+        if (!$('.tst-carousel').hasClass('owl-loaded')) {
+            $('.tst-carousel').owlCarousel({
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3500,
+                smartSpeed: 600,
+                margin: 16,
+                dots: true,
+                nav: false,
+                items: 1,
+                autoHeight: true
+            });
+        }
+    } else {
+        if ($('.tst-carousel').hasClass('owl-loaded')) {
+            $('.tst-carousel').trigger('destroy.owl.carousel');
+            $('.tst-carousel').removeClass('owl-carousel');
+        }
+    }
+}
+
+initTestimonials();
+window.addEventListener('resize', initTestimonials);
+
+
 })(jQuery);	
