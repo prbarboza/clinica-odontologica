@@ -2876,8 +2876,9 @@ h3 {
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 15, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_service.scss */
   .service_area .single_service h3 {
-    font-size: 20px;
+    font-size: 18px;
   }
+  
 }
 
 /* line 23, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_service.scss */
@@ -2889,6 +2890,17 @@ h3 {
   margin-top: 10px;
   margin-bottom: 26px;
 }
+
+@media (max-width: 767px) {
+  .service_area .single_service p {
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 8px;
+    margin-bottom: 18px;
+    font-weight: 300;
+  }
+}
+
 
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 34, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_service.scss */
@@ -6328,7 +6340,7 @@ h6 {
 @media (max-width: 767px) {
 
     .single_service {
-        background: #7ec1f6; /* mantém sua cor */
+        background: #0181f5; /* mantém sua cor */
         border-radius: 16px;
         box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
@@ -6340,3 +6352,53 @@ h6 {
         background: transparent;
     }
 }
+
+@media (max-width: 767px) {
+
+  .service_area .single_service {
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: left;
+  }
+
+  .service_area .single_service h3,
+  .service_area .single_service p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* botão não colado */
+  .service_area .single_service .boxed-btn3-white {
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 767px) {
+  .service_area {
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .service_area .row {
+    scroll-padding-left: 24px; /* empurra o primeiro card */
+    padding-top: 32px;         /* desce a seção */
+    gap: 8px; /* antes estava maior */
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .service_area {
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f3f7fb 100%
+    );
+  }
+
+}
+
+
