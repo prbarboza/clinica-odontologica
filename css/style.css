@@ -6705,10 +6705,15 @@ h6 {
   background: #f8f9fb;
 }
 
-/* CONTAINER — respiro lateral real */
+/* FIX DEFINITIVO — CONTAINER SEM BORDAS */
 .essenza-excellence-area .container {
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.essenza-excellence-area .owl-stage-outer {
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 /* GRID */
