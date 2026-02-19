@@ -6468,7 +6468,7 @@ h6 {
 
 /* ===== TESTIMONIAL PREMIUM ===== */
 .tst-area {
-    background: #f5fbff;
+    background: #ffff;
     padding: 40px 0;
 }
 
@@ -6596,46 +6596,4 @@ h6 {
     margin: 0 auto;
     
   }
-}
-
-@media (max-width: 767px) {
-  .tst-card {
-    background: #ffffff;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
-    border: 1px solid rgba(0, 123, 255, 0.25);
-  }
-}
-
-@media (max-width: 767px) {
-
-  /* força os itens do owl a terem mesma altura */
-  .tst-carousel .owl-item {
-    display: flex;
-    align-items: stretch;
-  }
-
-  /* card ocupa 100% da altura do item */
-  .tst-carousel .owl-item .tst-card {
-    width: 100%;
-    height: 100%;
-    min-height: 260px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    padding: 28px 22px;
-    margin: 0;
-
-    background: #ffffff;
-    border-radius: 18px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(93, 178, 255, 0.25);
-  }
-
-  /* padroniza o texto */
-  .tst-card p {
-    min-height: 90px;
-  }
-
 }
