@@ -6705,9 +6705,15 @@ h6 {
   background: #f8f9fb;
 }
 
+/* CONTAINER — respiro lateral real */
+.essenza-excellence-area .container {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
 /* GRID */
 .essenza-cards {
-  margin-top: 40px;
+  margin-top: 56px;
   justify-content: center;
 }
 
@@ -6715,58 +6721,61 @@ h6 {
    CARD
 ================================ */
 .excellence-card {
+  position: relative;
+  overflow: hidden;
+
   width: 100%;
-  height: 100%;
-  margin: 0 auto;
+  min-height: 260px;
 
   padding: 32px 26px;
 
-  background: #fdfcf9;
-  border: 1px solid #e6e6e6;
+  background: #ffffff;
   border-radius: 18px;
-
-  box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 
-  /* destaque sutil */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  /* sombra azul suave */
+  box-shadow: 0 14px 36px rgba(74, 111, 165, 0.14);
 
-  /* trava qualquer efeito herdado */
   transform: none !important;
   transition: none !important;
 }
 
-/* remove qualquer interação visual */
-.excellence-card:hover,
-.excellence-card:active,
-.excellence-card:focus {
-  transform: none !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+/* overlay sutil (acabamento premium) */
+.excellence-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0) 0%,
+    rgba(74,111,165,0.03) 100%
+  );
+  pointer-events: none;
+}
+
+.excellence-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* ===============================
    ÍCONE
 ================================ */
 .excellence-card .icon {
-  width: 60px;
-  height: 60px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-bottom: 18px;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 20px;
 }
 
 .excellence-card .icon svg {
-  width: 34px;
-  height: 34px;
-  stroke-width: 1.5;
-  color: #b08734;
+  width: 42px;
+  height: 42px;
+  stroke-width: 1.6;
+  color: #4a6fa5;
 }
 
 /* ===============================
@@ -6776,6 +6785,7 @@ h6 {
   font-size: 19px;
   font-weight: 600;
   line-height: 1.3;
+  min-height: 2.6em;
   margin-bottom: 14px;
 }
 
@@ -6783,11 +6793,13 @@ h6 {
   font-size: 15px;
   line-height: 1.7;
   color: #555555;
-  margin: 0;
+
+  max-width: 260px;
+  margin: auto;
 }
 
 /* ===============================
-   DESKTOP — ALTURA UNIFORME
+   DESKTOP
 ================================ */
 @media (min-width: 992px) {
   .essenza-cards > div {
@@ -6812,6 +6824,11 @@ h6 {
     padding: 30px 26px;
   }
 
+  .essenza-excellence-area .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .essenza-excellence-area .section_title {
     margin-top: -16px;
     margin-bottom: 24px;
@@ -6821,31 +6838,8 @@ h6 {
     padding-bottom: 12px;
     margin-bottom: 12px;
   }
-
-  .essenza-excellence-area .section_title p {
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.7;
-  }
 }
-
-@media (max-width: 768px) {
-  .excellence-card h4 {
-    min-height: 2.6em;      /* força mesma altura */
-    line-height: 1.3;
-  }
-}
-
-@media (max-width: 768px) {
-  .essenza-excellence-area .row {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
 
 /* ===============================
    ESSENZA | EXCELÊNCIA END
 ================================ */
-
