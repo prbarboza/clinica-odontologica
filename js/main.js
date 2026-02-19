@@ -380,31 +380,29 @@ document.addEventListener('click', function (e) {
   }
 });
 
-function initTestimonials() {
-    if (window.innerWidth < 992) {
-        if (!$('.tst-carousel').hasClass('owl-loaded')) {
-            $('.tst-carousel').owlCarousel({
-                loop: true,
-                autoplay: true,
-                autoplayTimeout: 3500,
-                smartSpeed: 600,
-                margin: 16,
-                dots: true,
-                nav: false,
-                items: 1,
-                autoHeight: true
-            });
-        }
-    } else {
-        if ($('.tst-carousel').hasClass('owl-loaded')) {
-            $('.tst-carousel').trigger('destroy.owl.carousel');
-            $('.tst-carousel').removeClass('owl-carousel');
-        }
+$('.tst-carousel').owlCarousel({
+  loop: false,
+  autoplay: true,
+  autoplayTimeout: 4000,
+  smartSpeed: 600,
+  margin: 24,
+  dots: true,
+  nav: false,
+  responsive: {
+    0: {
+      items: 1,
+      autoHeight: true
+    },
+    768: {
+      items: 2,
+      autoHeight: false
+    },
+    1200: {
+      items: 3
     }
-}
+  }
+});
 
-initTestimonials();
-window.addEventListener('resize', initTestimonials);
 
 /* ===============================
    Essenza Cards Carousel (Mobile)
@@ -412,8 +410,6 @@ window.addEventListener('resize', initTestimonials);
 (function () {
   const initEssenzaCarousel = () => {
     const cards = document.querySelector('.essenza-cards');
-
-    // se a seção não existir, não faz nada
     if (!cards || typeof jQuery === 'undefined') return;
 
     const $cards = jQuery(cards);
@@ -421,30 +417,40 @@ window.addEventListener('resize', initTestimonials);
 
     if (isMobile) {
       if (!$cards.hasClass('owl-loaded')) {
-        $cards
-          .addClass('owl-carousel')
-          .owlCarousel({
-            items: 1,
-            loop: true,
-            margin: 0,
-            autoplay: true,
-            autoplayTimeout: 4000,
-            autoplayHoverPause: true,
-            dots: true,
-            nav: false
-          });
+        $cards.addClass('owl-carousel').owlCarousel({
+          items: 1,
+          center: true,         // Centraliza o card ativo
+          loop: true,
+          margin: 20,           // Espaçamento entre os cards
+          stagePadding: 40,     // Mostra um pedaço dos cards laterais
+          autoplay: true,
+          autoplayTimeout: 4000,
+          autoplayHoverPause: true,
+          dots: true,
+          nav: false,
+          responsiveRefreshRate: 100 // Melhora o recálculo no resize
+        });
       }
     } else {
       if ($cards.hasClass('owl-loaded')) {
         $cards.trigger('destroy.owl.carousel');
         $cards.removeClass('owl-carousel owl-loaded');
+        // Importante: limpa o HTML gerado pelo Owl
         $cards.find('.owl-stage-outer').children().unwrap();
+        $cards.find('.owl-stage').children().unwrap();
+        $cards.find('.owl-item').children().unwrap();
       }
     }
   };
 
-  document.addEventListener('DOMContentLoaded', initEssenzaCarousel);
-  window.addEventListener('resize', initEssenzaCarousel);
+  // Garante que o carrossel inicie corretamente
+  jQuery(document).ready(initEssenzaCarousel);
+  
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(initEssenzaCarousel, 250);
+  });
 })();
 
 

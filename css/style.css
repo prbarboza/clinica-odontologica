@@ -665,7 +665,7 @@ h3 {
 
 /* line 35, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_section_title.scss */
 .section_title p {
-  font-size: 16px;
+  font-size: 18px;
   color: #727272;
   line-height: 28px;
   margin-bottom: 0;
@@ -677,6 +677,22 @@ h3 {
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+
+  .section_title h3 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .section_title p {
+    font-size: 15px;
+    line-height: 24px;
+    color: #7a7a7a;
+  }
+
+}
+
 
 /* line 48, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_section_title.scss */
 .mb-100 {
@@ -1241,32 +1257,53 @@ h3 {
   margin-right: 7px;
 }
 
-/* line 1, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_slider.scss */
-.slider_bg_1 {
-  background-image: url(../img/banner/banner1.jpg);
-}
 
-/* line 4, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_slider.scss */
-.slider_bg_2 {
-  background-image: url(../img/banner/banner2.jpg);
-}
+/* =====================================================
+   SLIDER | ESSENZA ODONTO — IMG NO HTML (SEM ENGASGO)
+   START
+===================================================== */
 
-/* line 8, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_slider.scss */
+/* SLIDE BASE */
 .slider_area .single_slider {
+  position: relative;
   height: 700px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
 }
 
+/* MOBILE */
 @media (max-width: 767px) {
-  /* line 8, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_slider.scss */
   .slider_area .single_slider {
     height: 420px;
   }
 }
 
-/* line 17, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_slider.scss */
+/* IMAGEM DO SLIDE (vem do HTML agora) */
+.slider_area .single_slider img.slider-img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+}
+
+/* TEXTO SEMPRE ACIMA DA IMAGEM */
+.slider_area .single_slider .slider_text {
+  position: relative;
+  z-index: 2;
+}
+
+/* =====================================================
+   TÍTULO
+===================================================== */
+
 .slider_area .single_slider .slider_text h3 {
   color: #1F1F1F;
   font-family: "Poppins", sans-serif;
@@ -1276,48 +1313,49 @@ h3 {
   font-weight: 400;
 }
 
-/* line 24, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_slider.scss */
 .slider_area .single_slider .slider_text h3 span {
   font-weight: 700;
   font-size: 44px;
 }
 
+/* MOBILE — TÍTULO */
 @media (max-width: 767px) {
 
   .slider_area .single_slider .slider_text h3 {
     font-size: 24px;
     letter-spacing: 3px;
     font-weight: 300;
-    line-height: 1.3;          /* controla distância entre linhas */
-    margin-bottom: 16px;       /* espaço abaixo do título */
+    line-height: 1.3;
+    margin-bottom: 16px;
   }
 
   .slider_area .single_slider .slider_text h3 span {
-    display: block;            /* separa as linhas */
+    display: block;
     font-weight: 700;
     font-size: 36px;
-    margin-bottom: -30px;        /* espaço ENTRE o span e o texto de baixo */
+    margin-bottom: -30px;
   }
-
 }
 
-
+/* TABLET */
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 17, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_slider.scss */
   .slider_area .single_slider .slider_text h3 {
     font-size: 30px;
   }
 }
 
+/* DESKTOP MÉDIO */
 @media (min-width: 992px) and (max-width: 1200px) {
-  /* line 17, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_slider.scss */
   .slider_area .single_slider .slider_text h3 {
     font-size: 35px;
     letter-spacing: 3px;
   }
 }
 
-/* line 39, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_slider.scss */
+/* =====================================================
+   PARÁGRAFO
+===================================================== */
+
 .slider_area .single_slider .slider_text p {
   font-size: 18px;
   font-weight: 400;
@@ -1326,19 +1364,24 @@ h3 {
   margin-top: 10px;
 }
 
+/* DESKTOP MÉDIO */
 @media (min-width: 992px) and (max-width: 1200px) {
-  /* line 39, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_slider.scss */
   .slider_area .single_slider .slider_text p {
     font-size: 16px;
   }
 }
 
+/* MOBILE */
 @media (max-width: 767px) {
-  /* line 39, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_slider.scss */
   .slider_area .single_slider .slider_text p {
     font-size: 16px;
   }
 }
+
+/* =====================================================
+   SLIDER END
+===================================================== */
+
 
 /* line 1, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
 .welcome_docmed_area {
@@ -3171,6 +3214,32 @@ h3 {
 .emergency_bg_2 {
   background-image: url(../img/banner/emergency-2.png);
 }
+
+/* ===============================
+   EMERGENCY CONTACT — MOBILE FIX
+================================ */
+@media (max-width: 767px) {
+  .single_emergency {
+    flex-direction: column;
+    text-align: center;
+    padding: 48px 24px;
+  }
+
+  .single_emergency .info {
+    margin-bottom: 20px;
+  }
+
+  .single_emergency .info h3 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .single_emergency .info p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
 
 /*=================== contact banner start ====================*/
 /* line 3, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_contact.scss */
@@ -6473,178 +6542,130 @@ h6 {
 
 /* ===== TESTIMONIAL PREMIUM ===== */
 
-/* Área da seção (SEM background) */
+/* ===============================
+   TESTIMONIALS — ESSENZA (FINAL)
+================================ */
+
+/* SEÇÃO */
 .tst-area {
-    background: transparent;
-    padding: 10px 0;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 80px; /* empurra a seção de baixo */
-    
+  padding: 64px 0 80px;
+  background: transparent;
 }
 
-/* Container do carrossel / grid */
+/* TÍTULO */
+.tst-area .section_title {
+  margin-bottom: 40px;
+}
+
+/* OWL CONTAINER (NUNCA FLEX) */
 .tst-carousel {
-    display: flex;
-    gap: 32px;
-    justify-content: center;
-    align-items: stretch;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* CENTRALIZA CADA ITEM DO OWL */
+.tst-carousel .owl-item {
+  display: flex;
+  justify-content: center;
 }
 
 /* ================= CARD ================= */
 .tst-card {
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 32px 28px;
-    text-align: center;
-    max-width: 300px;
-    width: 100%;
-    position: relative;
-    z-index: 1;
+  width: 100%;
+  max-width: 260px;
 
-    /* mesma altura */
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  background: #f4f8ff;
+  border-radius: 16px;
+  padding: 26px 22px;
 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 14px 34px rgba(13, 110, 253, 0.10);
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 
-/* Borda degradê azul SUAVE */
-.tst-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    padding: 2px;
-    border-radius: 18px;
-    background: linear-gradient(
-        135deg,
-        #9acbff,
-        #cfe7ff,
-        #6fb1ff
-    );
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-}
-
-/* Hover só no desktop */
-@media (min-width: 992px) {
-    .tst-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 22px 52px rgba(13, 110, 253, 0.18);
-    }
-}
-
-/* ================= TEXTO ================= */
-.tst-card p {
-    font-size: 15px;
-    line-height: 26px;
-    color: #555555;
-    margin: 24px 0 18px;
-
-    /* força equilíbrio visual */
-    flex-grow: 1;
-}
-
-/* ================= AUTOR ================= */
-.tst-card h4 {
-    font-size: 15px;
-    font-weight: 600;
-    color: #1f1f1f;
-    margin: 0;
+  box-shadow: 0 10px 26px rgba(0, 80, 180, 0.10);
+  border: 1px solid #dbe7ff;
 }
 
 /* ================= AVATAR ================= */
 .tst-avatar {
-    width: 96px;
-    height: 96px;
-    margin: 0 auto 18px;
-    border-radius: 50%;
-    overflow: hidden;
-    background: #ffffff;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    flex-shrink: 0;
+  width: 72px;          /* tamanho controlado */
+  height: 72px;
+  margin: 0 auto 14px;  /* centraliza horizontalmente */
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .tst-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* ================= MOBILE FIRST ================= */
-@media (max-width: 991px) {
-    .tst-card {
-        max-width: 90%;
-        padding: 10px 24px 32px; /* ↓ sobe tudo */
-        padding-top: 30px;
-    }
 
-    .tst-card::after {
-        padding: 3px;
-    }
-
-    .tst-avatar {
-        width: 110px;
-        height: 110px;
-    }
-
-    .tst-card p {
-    min-height: 140px;
-    font-size: 15px;
-    line-height: 26px;
-    color: #555555;
-    margin: 16px 0 18px;
-
-    display: flex;
-    align-items: flex-start;
+/* ================= TEXTO ================= */
+.tst-card p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #555555;
+  margin: 14px 0 16px;
+  margin-top: 18px;
 }
 
+/* ================= AUTOR ================= */
+.tst-card strong {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #1f1f1f;
+   margin-top: 12px;
+  display: block;
 }
 
-/* Mobile menor */
-@media (max-width: 767px) {
-    .tst-area {
-        padding-left: 16px;
-        padding-right: 16px;
-        padding: 0 0;
-        margin-bottom: 60px; /* empurra a seção de baixo */
-        
-    }
+/* ================= DESKTOP ================= */
+@media (min-width: 992px) {
+  .tst-card {
+    max-width: 240px; /* não ocupa a tela toda */
+  }
+}
 
-    .tst-carousel {
-        padding-left: 4px;
-        padding-right: 4px;
-    }
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
 
-    .tst-card {
-        margin: 0 auto;
-    }
+  .tst-area {
+    padding: 40px 0 60px;
+  }
+
+  .tst-card {
+    max-width: 90%;
+    padding: 22px 20px;
+  }
+
+  /* avatar menor no mobile */
+  .tst-avatar {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 12px;
+  }
+
+  .tst-card p {
+    font-size: 14px;
+    margin: 12px 0 14px;
+  }
+}
+
+/* TESTIMONIALS — ESTÁVEL */
+.tst-carousel .owl-item {
+  display: flex;
+  justify-content: center;
 }
 
 .tst-card {
-    height: 360px;
+  max-width: 280px;
+  width: 100%;
 }
 
-/* ===== SUBIR NOME (strong / autor) ===== */
-.tst-card strong,
-.tst-card h4 {
-    margin-top: -24px;
-    display: block;
-}
 
-/* ===== SERVIÇOS: CARDS MESMA ALTURA ===== */
-
-.single_service {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
 
 /* ===== SERVIÇOS: CARDS MESMA ALTURA ===== */
 
@@ -6677,7 +6698,7 @@ h6 {
   font-family: "Poppins", sans-serif;
   font-size: 30px;
   font-weight: 800;
-  color: #007bff;
+  color: #4AA0E5;
   text-decoration: none;
   letter-spacing: 0.5px;
 }
@@ -6696,155 +6717,308 @@ h6 {
 }
 
 /* ===============================
-   ESSENZA | EXCELÊNCIA START
-================================ */
-
-/* SEÇÃO */
-.essenza-excellence-area {
-  padding: 80px 0;
-  background: #f8f9fb;
-}
-
-/* FIX DEFINITIVO — CONTAINER SEM BORDAS */
-.essenza-excellence-area .container {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.essenza-excellence-area .owl-stage-outer {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-/* GRID */
-.essenza-cards {
-  margin-top: 56px;
-  justify-content: center;
-}
-
-/* ===============================
-   CARD
+   CARD PREMIUM (ESTILO FIXO)
 ================================ */
 .excellence-card {
   position: relative;
   overflow: hidden;
-
   width: 100%;
-  min-height: 260px;
-
-  padding: 32px 26px;
-
+  min-height: 270px;
+  padding: 40px 28px;
+  
+  /* Visual "Elevado" Permanente */
   background: #ffffff;
-  border-radius: 18px;
-
+  border-radius: 22px;
+  /* Borda sutil com tom azulado */
+  border: 1px solid rgba(74, 111, 165, 0.15); 
+  /* Sombras suaves que dão vida ao card no mobile */
+  box-shadow: 0 12px 35px rgba(0, 40, 100, 0.07);
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-
-  /* sombra azul suave */
-  box-shadow: 0 14px 36px rgba(74, 111, 165, 0.14);
-
-  transform: none !important;
-  transition: none !important;
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-/* overlay sutil (acabamento premium) */
-.excellence-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,0) 0%,
-    rgba(74,111,165,0.03) 100%
-  );
-  pointer-events: none;
-}
-
-.excellence-card > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* ===============================
-   ÍCONE
-================================ */
+/* Ícone com destaque constante */
 .excellence-card .icon {
-  width: 72px;
-  height: 72px;
-  margin-bottom: 20px;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f6ff; /* Fundo azul bem clarinho */
+  border-radius: 18px;
 }
 
 .excellence-card .icon svg {
-  width: 42px;
-  height: 42px;
-  stroke-width: 1.6;
+  width: 40px;
+  height: 40px;
+  stroke-width: 1.8;
   color: #4a6fa5;
 }
 
-/* ===============================
-   TEXTO
-================================ */
 .excellence-card h4 {
-  font-size: 19px;
-  font-weight: 600;
-  line-height: 1.3;
-  min-height: 2.6em;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a2b4a;
   margin-bottom: 14px;
 }
 
 .excellence-card p {
   font-size: 15px;
-  line-height: 1.7;
-  color: #555555;
-
-  max-width: 260px;
-  margin: auto;
+  line-height: 1.6;
+  color: #5a6b82;
+  margin: 0;
 }
 
 /* ===============================
-   DESKTOP
+   COMPORTAMENTO EXCLUSIVO DESKTOP
 ================================ */
 @media (min-width: 992px) {
-  .essenza-cards > div {
-    display: flex;
+  /* No desktop, o card "reage" ao mouse */
+  .excellence-card:hover {
+    transform: translateY(-10px);
+    border-color: #4a6fa5;
+    box-shadow: 0 20px 45px rgba(74, 111, 165, 0.15);
+  }
+
+  /* Inversão de cores no hover */
+  .excellence-card:hover .icon {
+    background: #4a6fa5;
+  }
+
+  .excellence-card:hover .icon svg {
+    color: #ffffff;
   }
 }
 
 /* ===============================
-   MOBILE
+   AJUSTE DE ESPAÇAMENTO MOBILE
 ================================ */
 @media (max-width: 768px) {
-
-  .essenza-excellence-area {
-    padding: 60px 0;
-  }
-
-  .essenza-cards > div {
-    display: block;
-  }
-
   .excellence-card {
-    padding: 30px 26px;
+    /* No mobile, garantimos que os cards não fiquem colados */
+    margin-bottom: 25px; 
+    padding: 35px 22px;
   }
-
-  .essenza-excellence-area .row {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .essenza-excellence-area .section_title {
-    margin-top: -16px;
-    margin-bottom: 24px;
-  }
-
-  .essenza-excellence-area .section_title h3 {
-    padding-bottom: 12px;
-    margin-bottom: 12px;
+  
+  /* Opcional: manter o ícone colorido no mobile para dar mais vida */
+  .excellence-card .icon {
+    background: #e6efff; 
   }
 }
 
+@media (max-width: 768px) {
+    .excellence-card {
+        width: 85%; /* Deixa um respiro visual nas laterais */
+        margin: 0 auto 30px auto; /* Centraliza o card horizontalmente */
+        min-height: auto; /* Ajusta a altura conforme o conteúdo */
+        
+    }
+    
+    .essenza-cards {
+        margin-top: 30px;
+    }
+}
+
 /* ===============================
-   ESSENZA | EXCELÊNCIA END
+   Fix Mobile - Centralização e Grid
+   =============================== */
+@media (max-width: 991px) {
+  /* Remove as bordas do container para o carrossel sangrar a tela */
+  .essenza-excellence-area .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Impede que as colunas do Bootstrap forcem largura ou empilhamento */
+  .essenza-cards.owl-carousel .owl-item > div[class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding: 0 10px !important; /* Respiro interno */
+  }
+
+  /* Garante que o card ocupe o espaço correto */
+  .excellence-card {
+    margin: 20px auto !important; /* Centraliza o card dentro do slide */
+    width: 100% !important;
+    display: flex !important;
+    /* Mantém a elevação que você pediu */
+    box-shadow: 0 12px 30px rgba(0, 40, 100, 0.08) !important;
+    border: 1px solid rgba(74, 111, 165, 0.15) !important;
+  }
+}
+
+/* Evita que a sombra seja cortada no topo/fundo pelo overflow do carrossel */
+.essenza-cards.owl-carousel .owl-stage-outer {
+  padding-top: 25px !important;
+  padding-bottom: 40px !important;
+}
+
+/* Força todos os itens do carrossel a terem a mesma altura */
+.essenza-cards.owl-carousel .owl-stage {
+    display: flex !important;
+}
+
+.essenza-cards.owl-carousel .owl-item {
+    display: flex !important;
+    flex: 1 0 auto;
+}
+
+.excellence-card {
+    display: flex !important;
+    flex-direction: column;
+    height: 100%; /* Faz o card ocupar toda a altura do container pai */
+    width: 100%;
+    justify-content: space-between; /* Distribui o conteúdo internamente */
+}
+
+/* Ajuste nos textos para não empurrarem o layout */
+.excellence-card h4 {
+    min-height: 3em; /* Reserva espaço para títulos de até 2 ou 3 linhas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.excellence-card p {
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço restante, empurrando o que estiver abaixo */
+}
+
+/* ===== FIX MOBILE — SUBIR CARDS ===== */
+@media (max-width: 768px) {
+
+  /* remove espaço acima do carrossel */
+  .essenza-excellence-area .owl-stage-outer {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* remove espaçamento vertical do grid */
+  .essenza-excellence-area .row.g-4 {
+    --bs-gutter-y: 0;
+  }
+
+  /* aproxima cards do título */
+  .essenza-cards {
+    margin-top: -30px !important;
+  }
+
+}
+
+/* ===== FIX DESKTOP — RESPIRO ANTES DO RODAPÉ ===== */
+@media (min-width: 769px) {
+  .essenza-excellence-area {
+    padding-bottom: 80px;
+  }
+}
+
+/* ===== IGUALAR ALTURA DOS CARDS (TEXTO) ===== */
+.tst-card p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;   /* número de linhas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .tst-card p {
+    -webkit-line-clamp: 2;
+  }
+}
+
+/* Texto dos depoimentos */
+.tst-card p {
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #555555;
+}
+
+@media (max-width: 768px) {
+  .welcome_docmed_area .welcome_docmed_info p {
+    font-size: 14.5px;
+    line-height: 24px;
+    color: #7a7a7a;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .our_department_area .single_department .department_content {
+    text-align: left;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .our_department_area .single_department .department_content h3,
+  .our_department_area .single_department .department_content p {
+    text-align: left;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  /* Card de serviço */
+  .single_service {
+    height: auto;              /* remove alongamento */
+    padding: 20px 18px;        /* reduz altura */
+    min-height: unset;
+  }
+
+  /* Área interna do conteúdo */
+  .single_service .service_content {
+    padding: 0;
+  }
+
+  /* ÍCONE */
+  .single_service .service_icon {
+    margin-bottom: 14px;
+  }
+
+  /* TÍTULO */
+  .single_service h3 {
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  /* TEXTO */
+  .single_service p {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 12px;
+  }
+
+  /* BOTÃO */
+  .single_service a {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+}
+
+/* ===============================
+   EMERGENCY CONTACT — DESKTOP HEIGHT
 ================================ */
+@media (min-width: 992px) {
+  .single_emergency {
+    min-height: 300px; /* pode testar 280px ou 300px */
+    padding: 80px 60px;
+  }
+
+  .single_emergency .info h3 {
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
+
+  .single_emergency .info p {
+    font-size: 17px;
+  }
+}
