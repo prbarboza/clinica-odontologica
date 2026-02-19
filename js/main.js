@@ -406,5 +406,47 @@ function initTestimonials() {
 initTestimonials();
 window.addEventListener('resize', initTestimonials);
 
+/* ===============================
+   Essenza Cards Carousel (Mobile)
+   =============================== */
+(function () {
+  const initEssenzaCarousel = () => {
+    const cards = document.querySelector('.essenza-cards');
+
+    // se a seção não existir, não faz nada
+    if (!cards || typeof jQuery === 'undefined') return;
+
+    const $cards = jQuery(cards);
+    const isMobile = window.innerWidth < 992;
+
+    if (isMobile) {
+      if (!$cards.hasClass('owl-loaded')) {
+        $cards
+          .addClass('owl-carousel')
+          .owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 0,
+            autoplay: true,
+            autoplayTimeout: 4000,
+            autoplayHoverPause: true,
+            dots: true,
+            nav: false
+          });
+      }
+    } else {
+      if ($cards.hasClass('owl-loaded')) {
+        $cards.trigger('destroy.owl.carousel');
+        $cards.removeClass('owl-carousel owl-loaded');
+        $cards.find('.owl-stage-outer').children().unwrap();
+      }
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', initEssenzaCarousel);
+  window.addEventListener('resize', initEssenzaCarousel);
+})();
+
+
 
 })(jQuery);	

@@ -623,7 +623,7 @@ h3 {
   color: #1F1F1F;
   position: relative;
   z-index: 9;
-  padding-bottom: 15px;
+  padding-bottom: 25px;
 }
 
 /* line 10, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_section_title.scss */
@@ -644,6 +644,7 @@ h3 {
   .section_title h3 {
     font-size: 30px;
     line-height: 36px;
+    margin-top: 26px;
   }
 }
 
@@ -1342,13 +1343,13 @@ h3 {
 /* line 1, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
 .welcome_docmed_area {
   padding-top: 120px;
-  padding-bottom: 220px;
+  padding-bottom: 70px;
 }
 
 @media (max-width: 767px) {
   /* line 1, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
   .welcome_docmed_area {
-    padding-bottom: 100px;
+    padding-bottom: 40px;
   }
 }
 
@@ -2700,7 +2701,7 @@ h3 {
 .our_department_area {
   background: #F5FBFF;
   padding-top: 40px;
-  padding-bottom: 120px;
+  padding-bottom: 90px;
 }
 
 /* line 5, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
@@ -2798,8 +2799,12 @@ h3 {
 
   .our_department_area .single_department .department_content p {
     font-size: 14px;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
+
+  .our_department_area {
+        padding-bottom: 40px;
+    }
 }
 
 
@@ -6668,5 +6673,162 @@ h6 {
     }
 }
 
+.text-logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  color: #007bff;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
 
+/* hover suave */
+.text-logo:hover {
+  color: #0056b3;
+}
 
+@media (max-width: 767px) {
+  .text-logo {
+    font-size: 24px;
+    font-size: 26px;
+  font-weight: 800;
+  }
+}
+
+/* ===== VARIAÇÃO AZUL SUAVE – ESSENZA ===== */
+.excellence-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 45px 35px;
+  border: 1px solid rgba(32, 92, 150, 0.18);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* faixa superior azul premium */
+.excellence-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(32, 92, 150, 0.9),
+    transparent
+  );
+}
+
+/* hover elegante */
+.excellence-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 28px 60px rgba(32, 92, 150, 0.18);
+  border-color: #205c96;
+}
+
+/* ícone azul com toque de luxo */
+.excellence-card .icon {
+  font-size: 38px;
+  margin-bottom: 22px;
+  color: #205c96;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.excellence-card:hover .icon {
+  transform: scale(1.15);
+  color: #b08734; /* dourado sutil no hover */
+}
+
+/* título */
+.excellence-card h4 {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #1f1f1f;
+}
+
+/* texto */
+.excellence-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.excellence-card:hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(32, 92, 150, 0.18),
+    transparent 70%
+  );
+}
+
+.essenza-excellence-area {
+  padding: 120px 0 140px; /* topo | base */
+}
+
+/* ==============================
+   ESSENZA – CARROSSEL MOBILE (LIMPO)
+   ============================== */
+@media (max-width: 991px) {
+
+  /* carrossel ativo no mobile */
+  .essenza-cards {
+    display: block;
+    padding-left: 16px;
+  }
+
+  /* remove gutters do bootstrap */
+  .essenza-cards .col-lg-3,
+  .essenza-cards .col-md-6 {
+    padding: 0 !important;
+    width: 100%;
+  }
+
+  /* owl */
+  .essenza-cards .owl-item {
+    display: block;
+  }
+
+  .essenza-cards .owl-stage {
+    padding-left: 0;
+  }
+
+  /* card */
+  .essenza-cards .excellence-card {
+    width: 90%;
+    max-width: 100%;
+    margin: 0;
+    padding: 28px 20px;
+  }
+
+  /* texto */
+  .essenza-cards .excellence-card p {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  /* dots neutros (sem cor custom) */
+  .owl-dots {
+    margin-top: 25px;
+  }
+
+}
+
+.excellence-card {
+    background: #ffffff;
+    border-radius: 20px; /* Bordas mais arredondadas transmitem cuidado e conforto */
+    padding: 40px 30px;
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Borda quase invisível */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Sombra suave e ampla */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
