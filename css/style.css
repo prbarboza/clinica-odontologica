@@ -6695,140 +6695,138 @@ h6 {
   }
 }
 
-/* ===== VARIAÇÃO AZUL SUAVE – ESSENZA ===== */
-.excellence-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 45px 35px;
-  border: 1px solid rgba(32, 92, 150, 0.18);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
-  transition: all 0.35s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* faixa superior azul premium */
-.excellence-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(32, 92, 150, 0.9),
-    transparent
-  );
-}
-
-/* hover elegante */
-.excellence-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 28px 60px rgba(32, 92, 150, 0.18);
-  border-color: #205c96;
-}
-
-/* ícone azul com toque de luxo */
 .excellence-card .icon {
-  font-size: 38px;
-  margin-bottom: 22px;
-  color: #205c96;
-  transition: transform 0.3s ease, color 0.3s ease;
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 16px;
 }
 
-.excellence-card:hover .icon {
-  transform: scale(1.15);
-  color: #b08734; /* dourado sutil no hover */
+.excellence-card .icon svg {
+  width: 32px;
+  height: 32px;
+
+  stroke-width: 1.5;
+  color: #b08734; /* dourado Essenza */
 }
 
-/* título */
+/* ===============================
+   ESSENZA | EXCELÊNCIA START
+================================ */
+
+.essenza-excellence-area {
+  padding: 80px 0;
+}
+
+.essenza-cards {
+  margin-top: 40px;
+}
+
+/* 🔒 CARD */
+.excellence-card {
+  width: 100%;
+  height: 100%;
+
+  padding: 32px 26px;
+
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 18px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  /* trava qualquer efeito herdado */
+  transform: none !important;
+  transition: none !important;
+  
+}
+
+/* remove qualquer interação visual */
+.excellence-card:hover,
+.excellence-card:active,
+.excellence-card:focus {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ÍCONE */
+.excellence-card .icon {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+}
+
+/* SVG Lucide */
+.excellence-card .icon svg {
+  width: 34px;
+  height: 34px;
+  stroke-width: 1.5;
+  color: #b08734;
+}
+
+/* TÍTULO */
 .excellence-card h4 {
   font-size: 19px;
   font-weight: 600;
+  line-height: 1.3;
   margin-bottom: 14px;
-  color: #1f1f1f;
 }
 
-/* texto */
+/* TEXTO */
 .excellence-card p {
   font-size: 15px;
-  line-height: 1.6;
-  color: #555;
+  line-height: 1.7;
+  color: #555555;
+  margin: 0;
 }
 
-.excellence-card:hover::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at top,
-    rgba(32, 92, 150, 0.18),
-    transparent 70%
-  );
+/* ===============================
+   DESKTOP — ALTURA UNIFORME
+================================ */
+@media (min-width: 992px) {
+  .essenza-cards > div {
+    display: flex;
+  }
 }
 
-.essenza-excellence-area {
-  padding: 120px 0 140px; /* topo | base */
-}
-
-/* ==============================
-   ESSENZA – CARROSSEL MOBILE (LIMPO)
-   ============================== */
-@media (max-width: 991px) {
-
-  /* carrossel ativo no mobile */
-  .essenza-cards {
-    display: block;
-    padding-left: 16px;
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 768px) {
+  .essenza-excellence-area {
+    padding: 60px 0;
+    background: #f8f9fb;
   }
 
-  /* remove gutters do bootstrap */
-  .essenza-cards .col-lg-3,
-  .essenza-cards .col-md-6 {
-    padding: 0 !important;
-    width: 100%;
+  .essenza-cards > div {
+    display: block; /* garante visibilidade */
   }
 
-  /* owl */
-  .essenza-cards .owl-item {
-    display: block;
+  .excellence-card {
+    padding: 26px 22px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   }
-
-  .essenza-cards .owl-stage {
-    padding-left: 0;
-  }
-
-  /* card */
-  .essenza-cards .excellence-card {
-    width: 90%;
-    max-width: 100%;
-    margin: 0;
-    padding: 28px 20px;
-  }
-
-  /* texto */
-  .essenza-cards .excellence-card p {
-    font-size: 14px;
-    line-height: 1.45;
-  }
-
-  /* dots neutros (sem cor custom) */
-  .owl-dots {
-    margin-top: 25px;
-  }
-
 }
 
 .excellence-card {
-    background: #ffffff;
-    border-radius: 20px; /* Bordas mais arredondadas transmitem cuidado e conforto */
-    padding: 40px 30px;
-    border: 1px solid rgba(0, 0, 0, 0.05); /* Borda quase invisível */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Sombra suave e ampla */
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    position: relative;
-    overflow: hidden;
-    text-align: center;
+  border: 1px solid #e6e6e6;
+  box-shadow: inset 0 0 0 1px #ffffff;
 }
+
+/* ===============================
+   ESSENZA | EXCELÊNCIA END
+================================ */
