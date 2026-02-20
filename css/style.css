@@ -1550,8 +1550,8 @@ h3 {
   /* line 76, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_about.scss */
   .welcome_docmed_area .welcome_docmed_info h3 {
     font-size: 30px;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -6693,6 +6693,7 @@ h6 {
   width: 100%;
 }
 
+
 /* ===== SERVIÇOS: CARDS MESMA ALTURA ===== */
 
 .single_service {
@@ -6822,33 +6823,40 @@ h6 {
 }
 
 /* ===============================
-   AJUSTE DE ESPAÇAMENTO MOBILE
+   AJUSTE FINAL — MOBILE
 ================================ */
 @media (max-width: 768px) {
+
   .excellence-card {
-    /* No mobile, garantimos que os cards não fiquem colados */
-    margin-bottom: 25px; 
-    padding: 35px 22px;
+    width: 85%;
+    margin: 0 auto 24px;
+    padding: 26px 20px;      /* ↓ card mais baixo */
+    min-height: unset;
   }
-  
-  /* Opcional: manter o ícone colorido no mobile para dar mais vida */
+
+  /* ÍCONE — menor e mais elegante */
   .excellence-card .icon {
-    background: #e6efff; 
+    width: 48px;             /* ↓ diminui */
+    height: 48px;
+    font-size: 22px;         /* se for font-icon */
+    margin-bottom: 14px;
+    background: #e6efff;
+  }
+
+  /* TÍTULO */
+  .excellence-card h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  /* TEXTO */
+  .excellence-card p {
+    font-size: 14px;
+    line-height: 21px;       /* ↓ encurta altura */
+    margin-bottom: 0;
   }
 }
 
-@media (max-width: 768px) {
-    .excellence-card {
-        width: 85%; /* Deixa um respiro visual nas laterais */
-        margin: 0 auto 30px auto; /* Centraliza o card horizontalmente */
-        min-height: auto; /* Ajusta a altura conforme o conteúdo */
-        
-    }
-    
-    .essenza-cards {
-        margin-top: 30px;
-    }
-}
 
 /* ===============================
    Fix Mobile - Centralização e Grid
@@ -6945,18 +6953,24 @@ h6 {
 }
 
 /* ===== IGUALAR ALTURA DOS CARDS (TEXTO) ===== */
+/* DESKTOP — mantém padrão bonito */
 .tst-card p {
   display: -webkit-box;
-  -webkit-line-clamp: 3;   /* número de linhas */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
+/* MOBILE — texto completo */
 @media (max-width: 768px) {
   .tst-card p {
-    -webkit-line-clamp: 2;
+    display: block;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: visible;
   }
 }
+
 
 /* Texto dos depoimentos */
 .tst-card p {
@@ -6971,8 +6985,8 @@ h6 {
     font-size: 16px;
     line-height: 24px;
     color: #7a7a7a;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -7150,4 +7164,23 @@ html, body {
     display: none; /* remove botão individual no mobile */
   }
 
+}
+
+@media (min-width: 992px) {
+  .tst-carousel .owl-stage-outer {
+    height: auto !important;
+  }
+
+  .tst-carousel .owl-stage {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .tst-carousel .owl-item {
+    display: flex;
+  }
+
+  .tst-card {
+    height: 100%;
+  }
 }
