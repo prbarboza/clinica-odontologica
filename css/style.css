@@ -7041,12 +7041,7 @@ html, body {
     padding-left: 16px;
     padding-right: 16px;
   }
-
-  .row {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
+  
 }
 
 @media (max-width: 767px) {
@@ -7060,45 +7055,25 @@ html, body {
   }
 }
 
-section,
-.slider_area,
-.service_area,
-.tst-area,
-.footer {
-  overflow-x: hidden;
-}
-
 /* ===============================
-   FIX DEFINITIVO — BANNER MOBILE
+   FIX DEFINITIVO DO BANNER (SEM ENGASGO)
 ================================ */
 
-.slider_area,
 .slider_area .single_slider {
-  min-height: 420px;
+  aspect-ratio: 16 / 7;
+  height: auto !important;
+  overflow: hidden;
 }
 
+/* Mobile */
 @media (max-width: 767px) {
-  .slider_area,
   .slider_area .single_slider {
-    height: 420px;
-    min-height: 420px;
+    aspect-ratio: 4 / 5;
   }
 }
 
-@media (max-width: 767px) {
-  .slider_active,
-  .owl-stage-outer,
-  .owl-stage,
-  .owl-item {
-    height: 100%;
-  }
-
-  .single_slider {
-    display: flex !important;
-    align-items: center;
-  }
+.slider_area .single_slider {
+  height: 700px;
+  height: 420px;
 }
 
-.slider_area {
-  transition: height 0.25s ease-out;
-}
