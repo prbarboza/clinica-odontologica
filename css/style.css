@@ -686,12 +686,21 @@ h3 {
   }
 
   .section_title p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 24px;
     color: #7a7a7a;
   }
 
 }
+
+/* Ajuste de respiro do texto — MOBILE */
+@media (max-width: 767px) {
+  .section_title p {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 
 
 /* line 48, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_section_title.scss */
@@ -2841,7 +2850,7 @@ h3 {
   }
 
   .our_department_area .single_department .department_content p {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 16px;
   }
 
@@ -6661,11 +6670,9 @@ h6 {
 }
 
 .tst-card {
-  max-width: 280px;
+  max-width: 330px;
   width: 100%;
 }
-
-
 
 /* ===== SERVIÇOS: CARDS MESMA ALTURA ===== */
 
@@ -6942,7 +6949,7 @@ h6 {
 
 @media (max-width: 768px) {
   .welcome_docmed_area .welcome_docmed_info p {
-    font-size: 14.5px;
+    font-size: 16px;
     line-height: 24px;
     color: #7a7a7a;
   }
@@ -7021,4 +7028,77 @@ h6 {
   .single_emergency .info p {
     font-size: 17px;
   }
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 767px) {
+
+  /* remove excesso estrutural */
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .owl-stage-outer {
+    overflow: hidden;
+  }
+
+  .owl-stage {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+section,
+.slider_area,
+.service_area,
+.tst-area,
+.footer {
+  overflow-x: hidden;
+}
+
+/* ===============================
+   FIX DEFINITIVO — BANNER MOBILE
+================================ */
+
+.slider_area,
+.slider_area .single_slider {
+  min-height: 420px;
+}
+
+@media (max-width: 767px) {
+  .slider_area,
+  .slider_area .single_slider {
+    height: 420px;
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 767px) {
+  .slider_active,
+  .owl-stage-outer,
+  .owl-stage,
+  .owl-item {
+    height: 100%;
+  }
+
+  .single_slider {
+    display: flex !important;
+    align-items: center;
+  }
+}
+
+.slider_area {
+  transition: height 0.25s ease-out;
 }
