@@ -381,7 +381,7 @@ document.addEventListener('click', function (e) {
 });
 
 $('.tst-carousel').owlCarousel({
-  loop: false,
+  loop: true,
   autoplay: true,
   autoplayTimeout: 4000,
   smartSpeed: 600,

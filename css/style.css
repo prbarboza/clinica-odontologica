@@ -2770,9 +2770,9 @@ h3 {
 
 /* line 1, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
 .our_department_area {
-  background: #F5FBFF;
-  padding-top: 40px;
-  padding-bottom: 90px;
+  background: #f4f6f8;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
 }
 
 /* line 5, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_department.scss */
@@ -6655,7 +6655,7 @@ h6 {
 @media (max-width: 768px) {
 
   .tst-area {
-    padding: 40px 0 60px;
+    padding: 40px 0 80px;
   }
 
   .tst-card {
